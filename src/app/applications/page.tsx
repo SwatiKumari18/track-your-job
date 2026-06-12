@@ -299,25 +299,15 @@ export default function ApplicationsPage() {
         />
 
        <select
-  className="border p-2 w-full"
-  value={status}
-  onChange={(e) => setStatus(e.target.value)}
->
-  <option>Applied</option>
-  <option>Interview</option>
-  <option>Offer</option>
-  <option>Rejected</option>
-</select>
-
-<div className="mt-2">
-  <span
-    className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getStatusStyle(
-      status
-    )}`}
-  >
-    {status}
-  </span>
-</div>
+          className="border p-2 w-full"
+          value={status}
+          onChange={(e) => setStatus(e.target.value)}
+        >
+          <option>Applied</option>
+          <option>Interview</option>
+          <option>Offer</option>
+          <option>Rejected</option>
+        </select>
 
         <textarea
             className="border p-2 w-full"

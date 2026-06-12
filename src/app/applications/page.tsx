@@ -282,7 +282,7 @@ export default function ApplicationsPage() {
   
 
   return (
-    <main className="p-10">
+    <main className="p-4 md:p-10">
       <div className="space-y-3 max-w-md">
         <input
             className="border p-2 w-full"
@@ -298,25 +298,26 @@ export default function ApplicationsPage() {
             onChange={(e) => setPosition(e.target.value)}
         />
 
-        <select
-            className="border p-2 w-full"
-            value={status}
-            onChange={(e) => setStatus(e.target.value)}
-        >
-          <div className="mt-2">
-            <span
-              className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getStatusStyle(
-                status
-              )}`}
-            >
-              {status}
-            </span>
-          </div>
-            <option>Applied</option>
-            <option>Interview</option>
-            <option>Offer</option>
-            <option>Rejected</option>
-        </select>
+       <select
+  className="border p-2 w-full"
+  value={status}
+  onChange={(e) => setStatus(e.target.value)}
+>
+  <option>Applied</option>
+  <option>Interview</option>
+  <option>Offer</option>
+  <option>Rejected</option>
+</select>
+
+<div className="mt-2">
+  <span
+    className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${getStatusStyle(
+      status
+    )}`}
+  >
+    {status}
+  </span>
+</div>
 
         <textarea
             className="border p-2 w-full"
@@ -338,39 +339,41 @@ export default function ApplicationsPage() {
             My Applications
           </h2>
 
-          <input
-            className="border p-2 w-full mb-4"
-            placeholder="Search by company or position..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <select
-            className="border p-2 w-full mb-4"
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value)}
-          >
-            <option value="All">All</option>
-            <option value="Applied">Applied</option>
-            <option value="Interview">Interview</option>
-            <option value="Offer">Offer</option>
-            <option value="Rejected">Rejected</option>
-          </select>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <input
+              className="border p-2 w-full mb-4"
+              placeholder="Search by company or position..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+            <select
+              className="border p-2 w-full mb-4"
+              value={statusFilter}
+              onChange={(e) => setStatusFilter(e.target.value)}
+            >
+              <option value="All">All</option>
+              <option value="Applied">Applied</option>
+              <option value="Interview">Interview</option>
+              <option value="Offer">Offer</option>
+              <option value="Rejected">Rejected</option>
+            </select>
 
-          <select
-            className="border p-2 w-full mb-4"
-            value={dateFilter}
-            onChange={(e) => setDateFilter(e.target.value)}
-          >
-            <option value="today">Today</option>
-            <option value="7">Last 7 Days</option>
-            <option value="30">Last 30 Days</option>
-            <option value="90">Last 90 Days</option>
-            <option value="thisYear">This Year</option>
-          </select>
+            <select
+              className="border p-2 w-full mb-4"
+              value={dateFilter}
+              onChange={(e) => setDateFilter(e.target.value)}
+            >
+              <option value="today">Today</option>
+              <option value="7">Last 7 Days</option>
+              <option value="30">Last 30 Days</option>
+              <option value="90">Last 90 Days</option>
+              <option value="thisYear">This Year</option>
+            </select>
+          </div>
 
           <button
             onClick={exportToCSV}
-            className="border px-4 py-2 rounded mb-4 bg-gray-400"
+            className="border px-4 py-2 rounded mb-4 bg-pink-200 w-full md:w-auto"
           >
             Export CSV
           </button>

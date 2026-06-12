@@ -13,27 +13,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="flex h-screen">
+        <div className="flex flex-col md:flex-row md:h-screen">
 
           {/* Sidebar */}
-          <aside className="w-64 bg-gray-900 text-white p-6">
-            <h1 className="text-xl font-bold mb-6">
+          <aside className="w-full md:w-64 bg-indigo-400 p-4 md:p-6">
+            <h1 className="text-xl font-extrabold mb-6 tracking-wide text-purple">
               Track Your Job
             </h1>
 
-            <nav className="space-y-3">
-              <Link href="/dashboard" className="block hover:text-gray-300">
+            <nav className="flex gap-4 md:block md:space-y-3">
+              <Link href="/dashboard" className="text-lg font-bold block hover:text-gray-300">
                 Dashboard
               </Link>
 
-              <Link href="/applications" className="block hover:text-gray-300">
+              <Link href="/applications" className="text-lg font-bold block hover:text-gray-300">
                 Applications
               </Link>
             </nav>
           </aside>
 
           {/* Main Content */}
-          <main className="flex-1 p-8 bg-gray-50 overflow-auto">
+          <main className="flex-1 p-4 md:p-8 bg-gray-50 overflow-auto">
             {children}
           </main>
 
